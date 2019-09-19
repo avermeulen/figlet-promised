@@ -25,3 +25,16 @@ async function runFiglet() {
 }
 runFiglet();
 ```
+
+Use it with `Promise.all` to create multiple ascii decorated words.
+
+```javascript
+Promise
+	.all([figlet("Luca"), figlet("Felix")])
+	.then(function(results){
+
+		results.forEach(function(name) {
+			console.log(name);
+		});
+	});
+```
